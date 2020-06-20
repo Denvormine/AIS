@@ -1,0 +1,17 @@
+BACKUP DATABASE BackupBase TO DISK = 'C:\AIS\Ais-2\ais2_backup.bak';
+
+SELECT *
+FROM CITY;
+
+DROP TABLE City;
+
+SELECT *
+FROM CITY;
+
+USE master 
+GO 
+RESTORE DATABASE BackupBase FROM DISK = 'C:\AIS\Ais-2\ais2_backup.bak'
+WITH REPLACE;
+
+SELECT *
+FROM CITY;
